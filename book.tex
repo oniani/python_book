@@ -1,0 +1,142 @@
+%
+% Author: David Oniani
+%
+%  _____    ___     _  __
+% |_   _| _|_ _|___| |/ /___
+%   | || '__| |/ __| ' // __|
+%   | || |  | | (__| . \\__ \
+%   |_||_| |___\___|_|\_\___/
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document Definition
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages and Related Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Global, document-wide settings
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+% Other essential packages
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage{tocloft}
+\usepackage{xcolor}
+
+% Packages for making a fancy-looking cover
+\usepackage{afterpage}
+\usepackage{tikz}
+\usetikzlibrary{fadings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Remove indentations from paragraphs
+\setlength{\parindent}{0pt}
+
+% PDF information and nice-looking urls
+\hypersetup{%
+    pdfauthor={David Oniani},
+    pdftitle={Introduction to Programming in Python},
+    pdfsubject={Algorithms, Data Structures, Introduction to Programming in Python},
+    pdfkeywords={Algorithms, Data Structures, Introduction to Programming in Python},
+    pdflang={English},
+    colorlinks=true,
+    linkcolor={black!50!blue},
+    citecolor={black!50!blue},
+    urlcolor={black!50!blue}
+}
+
+% Font size for minted
+\setminted{autogobble=true}
+
+% Colorscheme for minted
+\usemintedstyle{tango}
+
+% Disable the color boxes around `!`
+\AtBeginEnvironment{minted}{\renewcommand{\fcolorbox}[4][]{#4}}
+
+% Dots for ToC
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% Fancy cover
+\newgeometry{left=1in,right=1in,top=1in,bottom=0in}
+
+\DeclareFixedFont{\titlefont}{T1}{ppl}{n}{}{0.8in}
+\DeclareFixedFont{\subtitlefont}{T1}{ppl}{n}{}{0.4in}
+
+\definecolor{color}{HTML}{3c2ac7}
+\pagecolor{color}
+
+\afterpage{\restoregeometry}
+\afterpage{\nopagecolor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Author(s), Title, and Date
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Author(s)
+% \author{David Oniani\\
+%     \href{mailto:onianidavid@gmail.com}{onianidavid@gmail.com}}
+
+% Title
+% \title{\textbf{Tricks}\\
+%     {\small\textsuperscript{*}Various Algorithmic Tricks for a Great Good!}}
+
+% Date
+% \date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beginning of the Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+% \maketitle
+
+\begin{flushright}
+    \rule{\paperwidth - 150pt}{1pt}
+    \\
+    \vspace{0.5em}
+    \titlefont{Introduction to Programming in Python}
+    \\
+    \vspace{0.25em}
+    \subtitlefont{by David Oniani}
+    \\
+    \rule{\paperwidth - 150pt}{1pt}
+\end{flushright}
+\vfill
+\begin{tikzpicture}
+    \centering
+    \node[scope fading=north,inner sep=0pt,outer sep=0pt] {
+        \makebox[\linewidth]{\includegraphics[width=\paperwidth]{assets/cover.jpg}}
+    };
+\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of Contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\tableofcontents
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{sections/data_types/data_types}
+\include{sections/print/print}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The End of the Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
