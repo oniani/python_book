@@ -15,13 +15,13 @@ Here is their table:
         \textbf{Data Type} & \textbf{Category} & \textbf{Examples}\\
         \midrule
 
-        \mintinline{python}{bool} & Boolean & \mintinline{python}{False}, \mintinline{python}{True}\\
-        \midrule
-
         \mintinline{python}{int} & Integers & 1, 2, 3, -1, -2, -3, 0\\
         \midrule
 
         \mintinline{python}{float} & Floating point numbers & 0.5, 1.5, 2.5, -0.5, -1.5, -2.5\\
+        \midrule
+
+        \mintinline{python}{bool} & Boolean & \mintinline{python}{False}, \mintinline{python}{True}\\
         \midrule
 
         \mintinline{python}{complex} & Complex numbers & \(1 + i\), \(2 + 2i\), \(-3 + 5i\)\\
@@ -56,20 +56,41 @@ Here is their table:
         \midrule
 
         \mintinline{python}{frozenset} & Set type & \mintinline{python}{frozenset({})},
-                                                    \mintinline{python}{frozenset({0})},
-                                                    \mintinline{python}{frozenset({1, 2, 3})}\\
+                                                    \mintinline{python}{frozenset({0, 1})}\\
         \midrule
 
         \mintinline{python}{dict} & Mapping type & \mintinline{python}{{}},
                                                    \mintinline{python}{{0: 1}},
-                                                   \mintinline{python}{{2: 3, 4: 5}},
-                                                   \mintinline{python}{{"a": 0, "b": 1, "c": 2}}\\
+                                                   \mintinline{python}{{"a": 2, "b": 3}}\\
         \bottomrule
     \end{tabular}
     \caption{Built-in Data Types}
     \label{tb.data.types}
 \end{table}
 
+\subsection{\mintinline{python}{int}}
+
+Counting is something that we all do in our everyday lives. It would be rather inconvenient if
+Python did not provide support for counting numbers (i.e., 1, 2, 3, etc.).
+\\\\
+On the other hand, counting numbers also have their negative counterparts and there's also zero.
+Having them is equally important.
+\\\\
+Positive counting numbers, their counterparts, and zero, together make a set of numbers called
+integers!
+\\\\
+Hence, we need to be able to represent integers. Python has \mintinline{python}{int} data type for
+this purpose. Python's \mintinline{python}{int} data type can represent negative integers, zero, and
+positive integers.
+
+\subsection{\mintinline{python}{float}}
+
+While we do have integers covered, we have not covered decimals. Python has our back!
+\mintinline{python}{float} can be used to represent both positive and negative decimals such as -0.5
+and 0.5.
+
 \subsection{\mintinline{python}{bool}}
 
-This is great.
+\mintinline{python}{bool} represents a boolean type. Boolean can only take two values -
+\mintinline{python}{True} and \mintinline{python}{False}. That is all we need to know about this
+type.
